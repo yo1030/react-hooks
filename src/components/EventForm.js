@@ -8,6 +8,8 @@ const EventForm = () => {
   // この方法だと EventForm の変更が App に反映されない
   // const [state, dispatch] = useReducer(reducer, []);
 
+  // "useContext(AppContext)" の戻り値から value で渡した値が取得できる
+  // console.log(useContext(AppContext));
   const {state, dispatch} = useContext(AppContext);
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');

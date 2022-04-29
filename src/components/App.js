@@ -5,8 +5,6 @@ import EventForm from './EventForm';
 import Events from './Events';
 import AppContext from '../contexts/AppContext';
 
-console.log({AppContext});
-
 const App = () => {
   const [state, dispatch] = useReducer(reducer, []);
   // console.log('App.js');
