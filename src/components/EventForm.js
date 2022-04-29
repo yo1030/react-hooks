@@ -1,11 +1,14 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 // import reducer from '../reducers';
 import {CREATE_EVENT, DELETE_ALL_EVENT} from '../actions';
+import AppContext from "../contexts/AppContext";
 
-const EventForm = ({state, dispatch}) => {
+const EventForm = () => {
   // state を App.js と別に独立して作成してしまう
   // この方法だと EventForm の変更が App に反映されない
   // const [state, dispatch] = useReducer(reducer, []);
+
+  const {state, dispatch} = useContext(AppContext);
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
   // console.log('EventForm');

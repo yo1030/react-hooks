@@ -2,9 +2,10 @@ import React, {useContext} from 'react';
 import CreateTBody from './CreateTBody';
 import AppContext from '../contexts/AppContext';
 
-const Events = ({state, dispatch}) => {
-  const value = useContext(AppContext);
-  console.log(value);
+const Events = () => {
+  // const value = useContext(AppContext);
+  // console.log(value);
+  const {state} = useContext(AppContext);
   return (
     <React.Fragment>
       <h4>イベント一覧</h4>
@@ -18,7 +19,7 @@ const Events = ({state, dispatch}) => {
           </tr>
         </thead>
         <tbody>
-          {state.map((e, index) => (<CreateTBody key={index} event={e} dispatchstate={dispatch} />))}
+          {state.map((e, index) => (<CreateTBody key={index} event={e} />))}
         </tbody>
       </table>
     </React.Fragment>

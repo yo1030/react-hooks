@@ -12,10 +12,10 @@ const App = () => {
   // console.log('App.js');
   // console.log({state});
   return (
-    <AppContext.Provider value="Provider Sample!">
+    <AppContext.Provider value={{state, dispatch}}>
       <div className="container-fluid">
-        <EventForm state={state} dispatch={dispatch}></EventForm>
-        <Events state={state} dispatch={dispatch}></Events>
+        <EventForm></EventForm>
+        <Events></Events>
       </div>
     </AppContext.Provider>
   );
