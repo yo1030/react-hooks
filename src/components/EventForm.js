@@ -41,7 +41,7 @@ const EventForm = () => {
   }
 
   const creatable = (title === '' || body === '');
-  const allDeletable = (state.length === 0);
+  const allDeletable = (state.events.length === 0);
   return (
     <React.Fragment>
       <h4>イベント作成フォーム</h4>

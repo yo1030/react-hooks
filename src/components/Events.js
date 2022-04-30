@@ -19,7 +19,7 @@ const Events = () => {
           </tr>
         </thead>
         <tbody>
-          {state.map((e, index) => (<CreateTBody key={index} event={e} />))}
+          {state.events.map((e, index) => (<CreateTBody key={index} event={e} />))}
         </tbody>
       </table>
     </React.Fragment>
