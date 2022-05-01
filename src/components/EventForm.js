@@ -57,9 +57,19 @@ const EventForm = () => {
       })
     }
   }
+  const deleteAllOperationLogs = e => {
+    e.preventDefault();
+    const result = window.confirm('全ての操作ログを削除しますか？');
+    if (result) {
+      dispatch({
+        type: DELETE_ALL_OPERATION_LOGS
+      })
+    }
+  }
 
   const creatable = (title === '' || body === '');
   const allDeletable = (state.events.length === 0);
+  const operationLogsClear = (state.operationLogs.length === 0);
   return (
     <React.Fragment>
       <h4>イベント作成フォーム</h4>
@@ -74,6 +84,7 @@ const EventForm = () => {
         </div>
         <button className='btn btn-primary' onClick={addEvent} disabled={creatable}>イベントを作成する</button>
         <button className='btn btn-danger' onClick={deleteAllEvent} disabled={allDeletable}>全てのイベントを削除する</button>
+        <button className='btn btn-danger' onClick={deleteAllOperationLogs} disabled={operationLogsClear}>全ての操作ログを削除する</button>
       </form>
     </React.Fragment>
   )
